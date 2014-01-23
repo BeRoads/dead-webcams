@@ -76,7 +76,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script>
-      //TODO : expand/append zone elements on click so we don't overflow the page 
       $.getJSON("http://data.beroads.com/IWay/Camera.json",
        function(data){
         var total = data.Camera.item.length;
@@ -103,12 +102,12 @@
         var percentage = Math.round((enabled/total)*100);
         var html = "";
 
-        html += '<div class="progress"> \
+        html += '<div class="progress" style="height:30px"> \
           <div class="progress-bar progress-bar-success" style="width: '+percentage+'%"> \
-            <span class="show">'+percentage+'% Available</span> \
+          <span class="show" style="font-size:16pt;margin-top:5px;">'+percentage+'% Available</span> \
           </div> \
           <div class="progress-bar progress-bar-warning" style="width: '+(100-percentage)+'%"> \
-            <span class="show">'+(100-percentage)+'% Unavailable</span> \
+          <span class="show" style="font-size:16pt;margin-top:5px;">'+(100-percentage)+'% Unavailable</span> \
           </div> \
           </div> \
         </div>';
